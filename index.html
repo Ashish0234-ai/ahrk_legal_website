@@ -17,7 +17,7 @@
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="opa.html">Our Practice Area</a></li>
             <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
             <li><a href="faq.html">Frequently Asked Questions (FAQ)</a></li>
         </ul>
         <div class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -31,11 +31,11 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="blogs.html">Blogs</a></li>
         <li><a href="opa.html">Our Practice Area</a></li>
         <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
         <li><a href="faq.html">Frequently Asked Questions (FAQ)</a></li>
     </ul>
 </div>
@@ -121,48 +121,6 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="contact-floating-shapes">
-        <div class="contact-shape contact-shape-1"></div>
-        <div class="contact-shape contact-shape-2"></div>
-        <div class="contact-shape contact-shape-3"></div>
-        <div class="contact-shape contact-shape-4"></div>
-        <div class="contact-shape contact-shape-5"></div>
-        <div class="contact-shape contact-shape-6"></div>
-    </div>
-    <div class="container">
-        <div class="contact-content">
-            <h2 class="section-title fade-in">Contact Us</h2>
-            <p class="fade-in">You can reach AHRK Legal for general informational purposes regarding our
-                practice areas. Please note that submitting an inquiry does not create an attorney-
-                client relationship, and we do not provide legal advice through this form. Specific
-                legal advice can only be provided after a formal consultation.</p>
-            <form class="contact-form fade-in">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="mobile">Phone</label>
-                    <input type="text" id="mobile" name="Phone" placeholder="Phone">
-                </div>
-                <div class="form-group">
-                    <label for="message">Subject/General Question</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Subject/General Question" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </div>
-</section>
-
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -179,6 +137,54 @@
         </div>
     </div>
 </footer>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="closePopup" class="close">&times;</span>
+        <h2>Disclaimer!</h2>
+        <p>This website is maintained by AHRK Legal, a collaborative chamber of Advocates Ashish Raj
+            and Hirday Singh Karki, who are enrolled with the Bar Council of Delhi under the Advocates
+            Act, 1961. </p>
+        <p>
+            The content provided on this website is intended for general educational and informational
+            purposes only. Nothing on this website should be construed as legal advice, solicitation, or
+            invitation to engage legal services. Use of this website or submission of any queries does not
+            create an attorney-client relationship. </p>
+        <p>    In accordance with Section 36 of the Advocates Act, 1961, and the professional standards set by
+            the Bar Council of India Rules, advocates are prohibited from soliciting work or advertising their
+            services. This website has been designed to comply with these provisions. </p>
+        <p>
+            All information provided, including descriptions of areas of practice, legal processes, and general
+            guidance, is presented in a neutral and factual manner. For advice or representation on specific
+            legal matters, a formal consultation with the advocates is required. </p>
+        <p>
+            By using this website, you acknowledge that the advocates and AHRK Legal are not liable for
+            any actions taken based on the information provided here. Users are advised to seek professional
+            legal guidance for specific issues.</p>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+         const closeBtn = document.getElementById('closePopup');
+         const popup = document.getElementById('popup');
+
+
+           popup.style.display = 'flex';
+
+
+         closeBtn.addEventListener('click', () => {
+           popup.style.display = 'none';
+         });
+
+         window.addEventListener('click', (e) => {
+           if (e.target === popup) {
+             popup.style.display = 'none';
+           }
+         });
+    });
+</script>
+
 
 <script src="templatemo-personal-javascripts.js"></script>
 
