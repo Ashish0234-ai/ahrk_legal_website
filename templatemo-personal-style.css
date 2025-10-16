@@ -1315,3 +1315,33 @@ https://templatemo.com/tm-593-personal-shape
 }
 
 
+.blog-post {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.blog-post h3 {
+  margin: 0;
+}
+.blog-post p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+#blog-posts h5 {
+  margin-bottom: 0.5rem;
+}
+#blog-posts p {
+  font-size: 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+

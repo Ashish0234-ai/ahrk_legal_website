@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AHRK Legal</title>
     <link href="templatemo-personal-style.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation -->
@@ -41,17 +41,15 @@
 </div>
 
 <!-- About Section -->
-<section id="about1" class="about">
+<section id="about1" class="about1">
     <div class="container">
-        <h2 class="section-title fade-in">Blogs</h2>
-            <iframe src="https://ahrklegalblog.blogspot.com/" style="width:100%; height:600px; overflow:auto;"
-                    >
-                <p>Your browser does not support iframes.</p>
-            </iframe>
+        <h2 class="section-title">Blogs</h2>
+        <div id="blog-posts">
 
-
+        </div>
     </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
@@ -63,6 +61,34 @@
         </div>
     </div>
 </footer>
+
+<script>
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://ahrklegalblog.blogspot.com/feeds/posts/default')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('blog-posts');
+        data.items.slice(0, 5).forEach(post => {
+          const title = post.title;
+        const link = post.link;
+        const date = new Date(post.pubDate).toDateString();
+        const description = post.description.replace(/<[^>]*>?/gm, '').split(" ").slice(0, 25).join(" ") + '...';
+
+        container.innerHTML += `
+          <div class="mb-4 border-bottom pb-2">
+            <h5><a href="${link}" target="_blank" class="text-decoration-none text-dark">${title}</a></h5>
+            <p class="text-muted mb-1">${date}</p>
+            <p class="text-secondary">${description}</p>
+          </div>
+        `;
+
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching blog posts:', error);
+      });
+</script>
+
+
 
 <script src="templatemo-personal-javascripts.js"></script>
 
