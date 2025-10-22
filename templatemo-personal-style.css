@@ -657,7 +657,7 @@ https://templatemo.com/tm-593-personal-shape
         .about-image {
             width: 100%;
             height: 500px;
-            background: url('images/smiling-girl-computer-desktop.jpg') center/cover;
+            background: url('images/law1.jpg') center/cover;
             border-radius: 30px;
             position: relative;
             overflow: hidden;
@@ -746,7 +746,7 @@ https://templatemo.com/tm-593-personal-shape
 
         .portfolio-item {
             background: var(--bg-card);
-            border-radius: 25px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -754,6 +754,9 @@ https://templatemo.com/tm-593-personal-shape
             opacity: 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
+            display : flex;
+            flex-direction: column;
+            align-items : center;
         }
 
         .portfolio-item.animate {
@@ -774,14 +777,16 @@ https://templatemo.com/tm-593-personal-shape
             overflow: hidden;
             background-size: cover;
             background-position: center;
+            border-radius : 10px;
+
         }
 
         .portfolio-item:nth-child(1) .portfolio-image {
-            background-image: url('images/working-business-women.jpg');
+            background-image: url('images/ASHISH_RAJ_1.jpg');
         }
 
         .portfolio-item:nth-child(2) .portfolio-image {
-            background-image: url('images/computer-desk-stickers.jpg');
+            background-image: url('images/Hriday.jpg');
         }
 
         .portfolio-item:nth-child(3) .portfolio-image {

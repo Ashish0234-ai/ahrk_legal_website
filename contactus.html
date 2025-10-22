@@ -72,11 +72,38 @@
     <div class="container">
         <div class="contact-content">
             <h2 class="section-title fade-in">Contact Us</h2>
+            <p class="fade-in">
+                <span>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#00FFFF" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                            <path d="M8 0a5 5 0 00-5 5c0 3.25 5 11 5 11s5-7.75 5-11a5 5 0 00-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/>
+                        </svg>
+                        G-326, Karkardooma Court Complex, Delhi-32
+                    </p>
+                </span>
+                <span>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#00FFFF" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                            <path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.708 2.825L15 11.383V5.383zM1 5.383v6l4.708-3.175L1 5.383z"/>
+                        </svg>
+                        teamahrklegal@gmail.com
+                    </p>
+                </span>
+                <span>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#00FFFF" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                            <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.448 1.785a17.568 17.568 0 008.168 8.168c.616.213 1.301.035 1.785-.448l1.035-1.035a.678.678 0 00-.063-1.015l-2.2-1.65a.678.678 0 00-.58-.122l-1.2.3a12.042 12.042 0 01-4.5-4.5l.3-1.2a.678.678 0 00-.122-.58l-1.65-2.2z"/>
+                        </svg>
+                        +91 9625881819   &  +91 931984548
+                    </p>
+                </span>
+            </p>
+            <br>
             <p class="fade-in">You can reach AHRK Legal for general informational purposes regarding our
                 practice areas. Please note that submitting an inquiry does not create an attorney-
                 client relationship, and we do not provide legal advice through this form. Specific
                 legal advice can only be provided after a formal consultation.</p>
-            <form class="contact-form fade-in">
+            <form id="contactForm" class="contact-form fade-in">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -100,7 +127,6 @@
         </div>
     </div>
 </section>
-
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -117,6 +143,25 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent actual form submission
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("mobile").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("New Contact Form Submission ");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+      );
+
+      window.location.href = `mailto:teamahrklegal@gmail.com?subject=${subject}&body=${body}`;
+    });
+</script>
+
 
 <script src="templatemo-personal-javascripts.js"></script>
 
